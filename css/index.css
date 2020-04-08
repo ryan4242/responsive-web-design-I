@@ -207,8 +207,8 @@ footer p {
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 800px) {
-    /* header has image centered above nav links 
-       intro has no image and title with button centered*/
+    /* tablet version */
+
     header {
         flex-direction: column-reverse;
     }
@@ -228,8 +228,8 @@ footer p {
 }
 
 @media only screen and (max-width: 500px) {
-    /* header nav links stack with borders
-       middle section paragraphs stacks */
+    /* mobile version  */
+    
     header {
         width: 100%;
         position: static;
