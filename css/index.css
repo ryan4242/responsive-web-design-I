@@ -1,3 +1,268 @@
 /* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Copy and paste your work from yesterday here and start to refactor into flexbox */
+/* Header */
+
+header {
+    width: 90%;
+    position: fixed;
+    background-color: #fff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+nav {
+    flex-basis: 75%;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+
+}
+  
+nav a {
+	  color: rgba(128, 128, 128, .5);
+	  font-weight: bold;
+	  text-decoration: none;
+	  margin-bottom: 0;
+}
+    
+/* intro section */
+  
+.intro {
+  height: 550px;
+  width: 90%;
+  margin: auto;
+  padding: 50px 15px;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+  
+.title {
+  align-self: center;
+}
+  
+.title h1 {
+  text-align: center;
+  width: 300px;
+  font-size: 5em;
+}
+  
+.intro button {
+  margin-left: 70px;
+  padding: 5px 40px;
+  font-size: 15px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+  
+.intro button:hover {
+    animation: oval 0.5s linear;
+}
+
+@keyframes oval {
+    0% {
+        border-radius: 0;
+        transform: scaleX(1);
+    }
+    50% {
+        border-radius: 10px;
+        transform: scaleX(1.1);
+    }
+    100% {
+        border-radius: 0;
+        transform: scaleX(1);
+    }
+}
+
+.intro img {
+    align-self: center;
+}
+
+/* main content section */
+
+.pre-img, .post-img {
+    width: 90%;
+    margin: 5vh auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about {
+    float: right;
+}
+
+.middle-img {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.post-img {
+    padding-bottom: 5vh;
+    border-bottom: 2px solid black;
+}
+
+.services, .products, .vision {
+    width: 32%;
+}
+
+/* footer */
+
+footer {
+    width: 90%;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+address {
+    font-weight: bold;
+}
+
+#number, #email {
+    display: inline-block;
+    margin-top: 5vh;
+}
+
+footer p {
+    align-self: center;
+    text-align: center;
+    font-weight: bold;
+}
 
 
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 800px) {
+    /* header has image centered above nav links 
+       intro has no image and title with button centered*/
+    header {
+        flex-direction: column-reverse;
+    }
+
+    nav {
+        width: 100%;
+        padding-bottom: 1vh;
+    }
+
+    .logo {
+        margin: 20px;
+    }
+
+    .intro img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    /* header nav links stack with borders
+       middle section paragraphs stacks */
+    header {
+        width: 100%;
+        position: static;
+        margin: auto;
+        border-bottom: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 3vh;
+        border-top: 1px solid black;
+    }
+
+    .intro {
+        height: auto;
+        padding: 10vh 15px;
+    }
+
+    .pre-img, .post-img {
+        flex-direction: column;
+    }
+
+    .about, .products, .vision {
+        padding-top: 5vh;
+    }
+
+    .services, .products, .vision {
+        width: auto;
+    }
+}
